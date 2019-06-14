@@ -12,4 +12,4 @@
 <div><a href="index.php">Retourn à l'accueil</a></div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('./view/template.php'); ?>
+<?php require('./view/frontend/ClientTemplate.php'); ?>

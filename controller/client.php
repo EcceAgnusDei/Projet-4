@@ -40,10 +40,10 @@ function addComment($postId, $author, $comment)
 
 function login()
 {
-	require('./view/backend/login.php');
+	require('./view/backend/loginView.php');
 }
 
 function admin()
 {
-	echo 'Bienvenu Mr Forteroche';
+	require('./view/backend/adminView.php');
 }
