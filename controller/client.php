@@ -37,3 +37,13 @@ function addComment($postId, $author, $comment)
 		header('Location: index.php?action=post&id=' . $postId);
 	}
 }
+
+function login()
+{
+	require('./view/backend/login.php');
+}
+
+function admin()
+{
+	echo 'Bienvenu Mr Forteroche';
+}

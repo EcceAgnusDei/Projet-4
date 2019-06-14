@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
+<div><a href="index.php?action=login">Admin</a></div>
 <p>Derniers billets du blog :</p>
 
 
