@@ -45,5 +45,5 @@ function login()
 
 function admin($user, $password)
 {
-	header('Location: ./view/backend/adminView.php?user=' . $user . '&password=' . $password);
+	header('Location: ./view/backend/adminView?user=' . $user . '&password=' . $password);
 }
