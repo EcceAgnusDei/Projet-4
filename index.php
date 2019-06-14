@@ -45,7 +45,7 @@ if (isset($_GET['action']))
 	{
 		if ($_POST['login'] == 'admin' && $_POST['password'] == 'admin')
 		{
-			admin();
+			admin($_POST['login'], $_POST['password']);
 		}
 		else
 		{

@@ -43,7 +43,7 @@ function login()
 	require('./view/backend/loginView.php');
 }
 
-function admin()
+function admin($user, $password)
 {
-	require('./view/backend/adminView.php');
+	header('Location: ./view/backend/adminView.php?user=' . $user . '&password=' . $password);
 }
