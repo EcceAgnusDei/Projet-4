@@ -1,6 +1,5 @@
 <?php
-
-require('controller/client.php');
+require('controller/clientController.php');
 
 if (isset($_GET['action']))
 {
