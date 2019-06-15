@@ -35,4 +35,20 @@ class CommentManager extends Manager
 
 		return $succes;
 	}
+
+	public function signal($commentId)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$signalement = $dataBase->prepare('SELECT signalement FROM comments WHERE id = ?');
+		$signalement->execute(array($commentId));
+
+		$signalFetch = $signalement->fetch();
+		$signalNumber = (int)$signalFetch['signalement'];
+		$signalNumber++;
+
+		$signalement->closeCursor();
+		$signalement = $dataBase->prepare('UPDATE comments SET signalement = ? WHERE id = ?');
+		$succes = $signalement->execute(array($signalNumber, $commentId));
+		return $succes;
+	}
 }

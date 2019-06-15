@@ -51,6 +51,18 @@ if (isset($_GET['action']))
 			echo "<p>L'authentification a échoué... <a href='index.php'>Revenir à l'accueil</a></p>";
 		}
 	}
+	elseif ($_GET['action'] == 'signal')
+	{
+		if (isset($_GET['id']) && $_GET['id'] > 0)
+		{
+			signal($_GET['id']);
+			echo 'Le commentaire a bien été signalé';
+		}
+		else
+		{
+			echo 'Erreur : Aucun commentaire n\'est identifié';
+		}
+	}
 }
 else
 {

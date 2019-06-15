@@ -1,16 +1,13 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<div><a href="index.php?action=login">Admin</a></div>
-<p>Derniers billets du blog :</p>
-
-
+<h2>Les derniers articles :</h2>
+<section>
 <?php
 while ($data = $posts->fetch())
 {
 ?>
-    <div class="news">
+    <article class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
             <em>le <?= $data['post_date_fr'] ?></em>
@@ -21,11 +18,15 @@ while ($data = $posts->fetch())
             <br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
         </p>
-    </div>
+    </article>
 <?php
 }
-$posts->closeCursor();
 ?>
-<?php $content = ob_get_clean(); ?>
+</section>
+
+<?php 
+$posts->closeCursor();
+$content = ob_get_clean(); 
+?>
 
 <?php require('./view/frontend/clientTemplate.php'); ?>

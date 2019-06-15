@@ -41,6 +41,12 @@ function addComment($postId, $author, $comment)
 	}
 }
 
+function signal($commentId)
+{
+	$commentManager = new CommentManager();
+	$commentManager->signal($commentId);
+}
+
 function login()
 {
 	require('./view/backend/loginView.php');
@@ -57,4 +63,11 @@ function logout()
 {
 	session_destroy();
 	header('Location: index.php');
+}
+
+function postAdmin()
+{
+	$postManager = new PostManager();
+	$posts = $postManager->getPosts();
+	require ('view/backend/postAdminView.php');
 }

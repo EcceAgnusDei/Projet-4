@@ -13,6 +13,10 @@ if (isset($_SESSION['user']))
 		{
 			logout();
 		}
+		elseif ($_GET['action'] == 'postadmin')
+		{
+			postadmin();
+		}
 	}
 	else
 	{

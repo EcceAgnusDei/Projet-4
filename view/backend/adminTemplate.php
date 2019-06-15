@@ -5,7 +5,7 @@
 	<h1>Bienvenue sur l'interface d'administration de votre site, Mr Forteroche</h1>
 	<nav>
 		<ul>
-			<li><a href="admin.php?action=postmanager">Gérer vos articles</a></li>
+			<li><a href="admin.php?action=postadmin">Gérer vos articles</a></li>
 			<li><a href="admin.php?action=commentmanager">Gérer les commentaires</a></li>
 			<li><a href=""></a></li>
 			<li><a href=""></a></li>
