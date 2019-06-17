@@ -38,7 +38,15 @@ if (isset($_GET['action']))
 	}
 	elseif ($_GET['action'] == 'login')
 	{
-		login();
+		if(isset($_SESSION['user']))
+		{
+			header('Location: admin.php');
+		}
+		else
+		{
+			login();
+		}
+		
 	}
 	elseif ($_GET['action'] == 'identifying')
 	{

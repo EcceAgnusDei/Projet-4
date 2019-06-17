@@ -20,6 +20,23 @@ class CommentManager extends Manager
 		return $comments;
 	}
 
+	public function getAllById()
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments ORDER BY id DESC');
+
+		return $comments;
+	}
+
+	public function getAllBySignal()
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments ORDER BY signalement DESC');
+
+		return $comments;
+	}
+
+
 	/**
 	 * Méthode enregistrant le commentaire dans la base de données
 	 * @param  int $postId  id du post dans lequel on veut inclure le commentaire
@@ -49,6 +66,15 @@ class CommentManager extends Manager
 		$signalement->closeCursor();
 		$signalement = $dataBase->prepare('UPDATE comments SET signalement = ? WHERE id = ?');
 		$succes = $signalement->execute(array($signalNumber, $commentId));
+		return $succes;
+	}
+
+	public function delete($id)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$del = $dataBase->prepare('DELETE FROM comments WHERE id = ?');
+		$succes = $del->execute(array($id));
+
 		return $succes;
 	}
 }

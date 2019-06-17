@@ -17,6 +17,25 @@ if (isset($_SESSION['user']))
 		{
 			postadmin();
 		}
+		elseif ($_GET['action'] == 'commentadminbyid')
+		{
+			listCommentsById();
+		}
+		elseif ($_GET['action'] == 'commentadminbysignal')
+		{
+			listCommentsBySignal();
+		}
+		elseif ($_GET['action'] == 'deletecomment')
+		{
+			if(isset($_GET['id']))
+			{
+				deleteComment($_GET['id']);
+			}
+			else
+			{
+				echo 'Aucun Id renseigné';
+			}
+		}
 	}
 	else
 	{

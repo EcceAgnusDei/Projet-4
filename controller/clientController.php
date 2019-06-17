@@ -69,5 +69,30 @@ function postAdmin()
 {
 	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
+
 	require ('view/backend/postAdminView.php');
+}
+
+function listCommentsById()
+{
+	$commentManager = new CommentManager();
+	$comments = $commentManager->getAllById();
+
+	require('view/backend/commentAdminView.php');
+}
+
+function listCommentsBySignal()
+{
+	$commentManager = new CommentManager();
+	$comments = $commentManager->getAllBySignal();
+
+	require('view/backend/commentAdminView.php');
+}
+
+function deleteComment($id)
+{
+	$commentManager = new CommentManager();
+	$commentManager->delete($id);
+
+	listCommentsBySignal();
 }
