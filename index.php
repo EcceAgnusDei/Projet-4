@@ -64,7 +64,7 @@ if (isset($_GET['action']))
 		if (isset($_GET['id']) && $_GET['id'] > 0)
 		{
 			signal($_GET['id']);
-			echo 'Le commentaire a bien été signalé';
+			header('Location: index.php?action=post&id=' . $_GET['post_id']);
 		}
 		else
 		{

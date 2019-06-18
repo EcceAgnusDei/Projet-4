@@ -1,5 +1,7 @@
 <?php $title = $post['title']; ?>
-<?php $head = ''; ?>
+<?php ob_start();?>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<?php $head = ob_get_clean(); ?>
 <?php ob_start();?>
 <section class="news">
 	<h2>Le billet du blog</h2>
@@ -16,11 +18,11 @@
 		<form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
 			<div>
 				<label for="author">Auteur</label><br />
-				<input type="text" id="author" name="author" />
+				<input type="text" id="author" name="author"  required/>
 			</div>
 			<div>
 				<label for="comment">Commentaire</label><br />
-				<textarea id="comment" name="comment"></textarea>
+				<textarea id="comment" name="comment" required></textarea>
 			</div>
 			<div>
 				<input type="submit" />
@@ -36,8 +38,19 @@
 		<p>
 			<strong><?= htmlspecialchars($data['author']) ?></strong> le <?= $data['comment_date_fr'] ?> : <?= htmlspecialchars($data['comment']) ?>
 		</p>
-		<p><a href="index.php?action=signal&amp;id=<?=$data['id'] ?>">Signaler</a></p>
+		<p><a href="index.php?action=signal&amp;id=<?=$data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" class="signal-btn" id="signal-btn-<?=$data['id'] ?>">Signaler</a></p>
 	</div>
+	<script>
+		if(localStorage.getItem("signal<?=$data['id'] ?>"))
+		{
+			$("#signal-btn-<?=$data['id'] ?>").css('pointer-events', 'none');
+			$("#signal-btn-<?=$data['id'] ?>").css('cursor', 'default');
+			$("#signal-btn-<?=$data['id'] ?>").text('Commentaire déjà signalé');
+		}
+		$("#signal-btn-<?=$data['id'] ?>").click(function(){
+		localStorage.setItem("signal<?=$data['id'] ?>",'true');
+		});
+	</script>
 	<?php 
 	}
 	?>
