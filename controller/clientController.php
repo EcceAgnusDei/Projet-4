@@ -124,3 +124,17 @@ function deletePost($id)
 		echo 'Erreur lors de la suppression de l\'article';
 	}
 }
+
+function updatePost($id, $title, $content)
+{
+	$postManager = new PostManager();
+	$succes = $postManager->update($id, $title, $content);
+	if($succes)
+	{
+		echo 'Votre article a bien été mis à jour';
+	}
+	else
+	{
+		echo 'Erreur lors de la mise à jour de l\'article';
+	}
+}

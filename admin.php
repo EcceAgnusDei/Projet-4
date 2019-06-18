@@ -55,6 +55,21 @@ if (isset($_SESSION['user']))
 				echo 'Veuillez indiquer l\'id de l\'article à supprimer';
 			}
 		}
+		elseif ($_GET['action'] == 'updatepostview')
+		{
+			if(isset($_GET['id']))
+			{
+				require('view/backend/createPostView.php');
+			}
+			else
+			{
+				echo 'Veillez renseigner l\'ID de l\'article à mettre à jour';
+			}
+		}
+		elseif ($_GET['action'] == 'updatepost')
+		{
+			updatePost($_GET['id'], $_POST['create-title'], $_POST['create-content']);
+		}
 	}
 	else
 	{

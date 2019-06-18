@@ -51,4 +51,13 @@ class PostManager extends Manager
 
 		return $succes;
 	}
+
+	public function update($id, $title, $content)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+		$succes = $request->execute(array($title, $content, $id));
+
+		return $succes;
+	}
 }
