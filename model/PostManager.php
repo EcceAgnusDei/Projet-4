@@ -42,4 +42,13 @@ class PostManager extends Manager
 
 		return $succes;
 	}
+
+	public function delete($id)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->prepare('DELETE FROM posts WHERE id = ?');
+		$succes = $request->execute(array($id));
+
+		return $succes;
+	}
 }

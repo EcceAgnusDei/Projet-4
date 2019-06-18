@@ -15,6 +15,10 @@
         <p>
             <?= $data['content'] ?>
         </p>
+        <ul>
+        	<li><a href="admin.php?action=deletepost&amp;id=<?= $data['id']; ?>">Supprimer</a></li>
+        	<li><a href="admin.php?action=updatepost&amp;id=<?= $data['id']; ?>">Mettre à jour</a></li>
+        </ul>
     </div>
 	<?php
 	}

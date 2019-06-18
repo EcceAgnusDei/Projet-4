@@ -110,3 +110,17 @@ function createPost($title, $content)
 		echo 'Erreur lors de la publication de l\'article';
 	}
 }
+
+function deletePost($id)
+{
+	$postManager = new PostManager();
+	$succes = $postManager->delete($id);
+	if($succes)
+	{
+		echo 'Votre article a bien été supprimé';
+	}
+	else
+	{
+		echo 'Erreur lors de la suppression de l\'article';
+	}
+}

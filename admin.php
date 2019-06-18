@@ -42,7 +42,18 @@ if (isset($_SESSION['user']))
 		}
 		elseif ($_GET['action'] == 'createpost')
 		{
-			createpost($_POST['create-title'], $_POST['create-content']);
+			createPost($_POST['create-title'], $_POST['create-content']);
+		}
+		elseif ($_GET['action'] == 'deletepost')
+		{
+			if(isset($_GET['id']))
+			{
+				deletePost($_GET['id']);
+			}
+			else
+			{
+				echo 'Veuillez indiquer l\'id de l\'article à supprimer';
+			}
 		}
 	}
 	else
