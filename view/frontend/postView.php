@@ -1,11 +1,11 @@
 <?php $title = $post['title']; ?>
-
+<?php $head = ''; ?>
 <?php ob_start();?>
 <section class="news">
 	<h2>Le billet du blog</h2>
 	<article>
 		<h3><?= $post['title'] ?> <em><?= $post['post_date_fr'] ?></em></h3>
-		<p><?= nl2br($post['content']) ?></p>
+		<p><?= $post['content'] ?></p>
 	</article>
 </section>
 

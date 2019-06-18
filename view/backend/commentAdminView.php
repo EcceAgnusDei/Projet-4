@@ -1,3 +1,4 @@
+<?php $head = ''; ?>
 <?php ob_start(); ?>
 <section>
 	<h2>Les derniers commentaires</h2>

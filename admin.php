@@ -36,6 +36,14 @@ if (isset($_SESSION['user']))
 				echo 'Aucun Id renseigné';
 			}
 		}
+		elseif ($_GET['action'] == 'newpost')
+		{
+			require('view/backend/createPostView.php');
+		}
+		elseif ($_GET['action'] == 'createpost')
+		{
+			createpost($_POST['create-title'], $_POST['create-content']);
+		}
 	}
 	else
 	{

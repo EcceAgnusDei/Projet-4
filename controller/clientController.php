@@ -96,3 +96,17 @@ function deleteComment($id)
 
 	listCommentsBySignal();
 }
+
+function createPost($title, $content)
+{
+	$postManager = new PostManager();
+	$succes = $postManager->addPost($title, $content);
+	if($succes)
+	{
+		echo 'Votre article a bien été publié';
+	}
+	else
+	{
+		echo 'Erreur lors de la publication de l\'article';
+	}
+}

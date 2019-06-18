@@ -1,5 +1,5 @@
 <?php $title = 'Authentification' ?>
-
+<?php $head = ''; ?>
 <?php ob_start(); ?>
 <h1>Administation</h1>
 <form action="./index.php?action=identifying" method="post">
