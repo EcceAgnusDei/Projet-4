@@ -34,6 +34,12 @@ class PostManager extends Manager
 		return $post;
 	}
 
+	/**
+	 * Méthode permettant d'ajouter un article.
+	 * @param string $title   Titre de l'article à ajouter.
+	 * @param string $content Contenu de l'article à ajouter.
+	 * @return bool Renvoie true si l'ensertion a bien été effectuée
+	 */
 	public function addPost($title, $content)
 	{
 		$dataBase = $this->dbConnect('projet4');
@@ -43,6 +49,11 @@ class PostManager extends Manager
 		return $succes;
 	}
 
+	/**
+	 * Supprime un article
+	 * @param  int $id Id de l'article à supprimer.
+	 * @return bool     Renvoie true si l'article a bien été supprimé
+	 */
 	public function delete($id)
 	{
 		$dataBase = $this->dbConnect('projet4');
@@ -52,6 +63,13 @@ class PostManager extends Manager
 		return $succes;
 	}
 
+	/**
+	 * Méthode permettant de mettre à jour un article existant
+	 * @param  int $id      Id de l'article à mettre à jour.
+	 * @param  string $title   Nouveau titre de l'article
+	 * @param  string $content Nouveau contenu de l'article
+	 * @return bool          Renvoie true si l'article à bien été mis à jour
+	 */
 	public function update($id, $title, $content)
 	{
 		$dataBase = $this->dbConnect('projet4');

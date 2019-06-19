@@ -125,6 +125,14 @@ function deletePost($id)
 	}
 }
 
+function updatePostView($id)
+{
+	$postManager = new PostManager();
+	$post = $postManager->getPost($id);
+
+	require('view/backend/createPostView.php');
+}
+
 function updatePost($id, $title, $content)
 {
 	$postManager = new PostManager();

@@ -59,7 +59,7 @@ if (isset($_SESSION['user']))
 		{
 			if(isset($_GET['id']))
 			{
-				require('view/backend/createPostView.php');
+				updatePostView($_GET['id']);
 			}
 			else
 			{

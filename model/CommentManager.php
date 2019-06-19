@@ -20,6 +20,11 @@ class CommentManager extends Manager
 		return $comments;
 	}
 
+	/**
+	 * Selectionne tous les commentaires et les classe du plus ancien
+	 * au plus récent
+	 * @return PDOStatement Requête obtenue à partir de la table comment
+	 */
 	public function getAllById()
 	{
 		$dataBase = $this->dbConnect('projet4');
@@ -28,6 +33,11 @@ class CommentManager extends Manager
 		return $comments;
 	}
 
+	/**
+	 * Selectionne les commentaires ayant été signalés et les ordonne
+	 * par nombre de signalement décroissant
+	 * @return PDOStatement Requête obtenue à partir de la table comment
+	 */
 	public function getAllBySignal()
 	{
 		$dataBase = $this->dbConnect('projet4');
@@ -53,6 +63,11 @@ class CommentManager extends Manager
 		return $succes;
 	}
 
+	/**
+	 * Signal un commentaire
+	 * @param  int $commentId Id du commentaire à signaler
+	 * @return bool Renvoie true si le signalement s'est bien déroulé           
+	 */
 	public function signal($commentId)
 	{
 		$dataBase = $this->dbConnect('projet4');
@@ -69,6 +84,11 @@ class CommentManager extends Manager
 		return $succes;
 	}
 
+	/**
+	 * permet de supprimer un commentaire
+	 * @param  int $id Id du commentaire à supprimer
+	 * @return bool     Renvoie true si le commentaire à bien été supprimé
+	 */
 	public function delete($id)
 	{
 		$dataBase = $this->dbConnect('projet4');

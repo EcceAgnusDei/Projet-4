@@ -1,5 +1,5 @@
-<?php $head='<script src="https://cdn.tiny.cloud/1/5717z0njwuwpxgfqw8iux6q63r20xwd7a12keqj48wz70rrb/tinymce/5/tinymce.min.js"></script>
-	<script>tinymce.init({selector:\'textarea\'});</script>' ?>
+<?php $head='<script src="public/js/tinymce/tinymce.min.js"></script>
+	<script>tinymce.init({selector:\'textarea\', language: \'fr_FR\'});</script>' ?>
 
 <?php
 if(isset($_GET['id']))
@@ -10,8 +10,8 @@ if(isset($_GET['id']))
 	<h2>Mettez à jours votre article</h2>
 	<form action="admin.php?action=updatepost&amp;id=<?= $_GET['id'] ?>" method="POST">
 		<label for="title">Titre</label>
-		<input type="text" name="create-title" id="create-title" required>
-		<textarea name="create-content" id="create-content"require></textarea>
+		<input type="text" name="create-title" id="create-title" value="<?=$post['title'];?>" required>
+		<textarea name="create-content" id="create-content"require><?= $post['content']; ?></textarea>
 		<input type="submit" value="Mettre à jour">
 	</form>
 </section>
