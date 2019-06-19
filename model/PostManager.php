@@ -78,4 +78,40 @@ class PostManager extends Manager
 
 		return $succes;
 	}
+
+	public function previous($id)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->query('SELECT id FROM posts');
+		$i = 0;
+		$idPosition = 0;
+		while($data = $request->fetch())
+		{
+			if ($id == $data['id'])
+			{
+				$idPosition = $i;
+			}
+			$idList[$i] = $data['id'];
+			$i++;
+		}
+		return $idList[$idPosition-1];
+	}
+
+	public function next($id)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->query('SELECT id FROM posts');
+		$i = 0;
+		$idPosition = 0;
+		while($data = $request->fetch())
+		{
+			if ($id == $data['id'])
+			{
+				$idPosition = $i;
+			}
+			$idList[$i] = $data['id'];
+			$i++;
+		}
+		return $idList[$idPosition+1];
+	}
 }

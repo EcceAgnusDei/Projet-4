@@ -25,6 +25,30 @@ function post()
 	require('./view/frontend/postView.php');
 }
 
+function previousPost($id)
+{
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+
+	$idPrev = $postManager->previous($id);
+	$post = $postManager->getPost($idPrev);
+	$comments = $commentManager->getComments($idPrev);
+
+	header('Location: index?action=post&id=' . $idPrev);
+}
+
+function nextPost($id)
+{
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+
+	$idNext = $postManager->next($id);
+	$post = $postManager->getPost($idNext);
+	$comments = $commentManager->getComments($idNext);
+
+	header('Location: index?action=post&id=' . $idNext);
+}
+
 function addComment($postId, $author, $comment)
 {
 	$commentManager = new CommentManager();

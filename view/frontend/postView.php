@@ -9,6 +9,12 @@
 		<h3><?= $post['title'] ?> <em><?= $post['post_date_fr'] ?></em></h3>
 		<p><?= $post['content'] ?></p>
 	</article>
+	<nav>
+		<ul>
+			<li><a href="index.php?action=previous&amp;id=<?=$post['id']?>">Précédent</a></li>
+			<li><a href="index.php?action=next&amp;id=<?=$post['id']?>">Suivant</a></li>
+		</ul>
+	</nav>
 </section>
 
 <section>
