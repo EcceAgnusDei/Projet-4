@@ -7,7 +7,7 @@
 		<ul>
 			<li><a href="admin.php?action=postadmin">Gérer vos articles</a></li>
 			<li><a href="admin.php?action=commentadminbyid">Gérer les commentaires</a></li>
-			<li><a href=""></a></li>
+			<li><a href="admin.php?action=newpost">Créer un nouvel article</a></li>
 			<li><a href=""></a></li>
 			<li><a href="admin.php?action=logout">Déconnexion</a></li>
 		</ul>

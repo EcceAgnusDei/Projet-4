@@ -16,6 +16,8 @@
     		<nav>
     			<ul>
     				<li><a href="index.php">Accueil</a></li>
+                    <li><a href="index.php?action=listPosts">Voir la liste des épisodes</a></li>
+                    <li><a href="index.php?action=lastEpisode">Voir le dernier épisode</a></li>
     				<li><a href="index.php?action=login">Admin</a></li>
     			</ul>
     		</nav>

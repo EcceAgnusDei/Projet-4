@@ -23,7 +23,6 @@
 	<?php
 	}
 	?>
-	<div><a href="admin.php?action=newpost">Créer un nouvel article</a></div>
 	<?php $posts->closeCursor();?>
 </section>
 <?php $contentAdmin = ob_get_clean(); ?>

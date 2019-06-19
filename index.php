@@ -20,6 +20,10 @@ try
 				throw new Exception('Aucun identifiant de billet n\'a été envoyé');
 			}
 		}
+		elseif ($_GET['action'] == 'lastEpisode')
+		{
+			lastEpisode();
+		}
 		elseif ($_GET['action'] == 'addComment')
 		{
 			if (isset($_GET['id']) && $_GET['id'] > 0) 
@@ -98,7 +102,7 @@ try
 	}
 	else
 	{
-		listPosts();
+		require('view/frontend/homeView.php');
 	}
 }
 catch (Exception $e)

@@ -51,6 +51,14 @@ function nextPost($id)
 	header('Location: index?action=post&id=' . $idNext);
 }
 
+function lastEpisode()
+{
+	$postManager = new PostManager();
+
+	header('Location: index?action=post&id=' . $postManager->lastPost());
+
+}
+
 function addComment($postId, $author, $comment)
 {
 	$commentManager = new CommentManager();

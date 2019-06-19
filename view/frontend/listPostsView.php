@@ -14,8 +14,6 @@ while ($data = $posts->fetch())
         </h3>
         
         <p>
-            <?= $data['content'] ?>
-            <br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire l'article</a></em>
         </p>
     </article>
