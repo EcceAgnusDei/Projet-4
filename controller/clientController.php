@@ -30,11 +30,7 @@ function post()
 function previousPost($id)
 {
 	$postManager = new PostManager();
-	$commentManager = new CommentManager();
-
 	$idPrev = $postManager->previous($id);
-	$post = $postManager->getPost($idPrev);
-	$comments = $commentManager->getComments($idPrev);
 
 	header('Location: index?action=post&id=' . $idPrev);
 }
@@ -42,11 +38,7 @@ function previousPost($id)
 function nextPost($id)
 {
 	$postManager = new PostManager();
-	$commentManager = new CommentManager();
-
 	$idNext = $postManager->next($id);
-	$post = $postManager->getPost($idNext);
-	$comments = $commentManager->getComments($idNext);
 
 	header('Location: index?action=post&id=' . $idNext);
 }
@@ -54,8 +46,9 @@ function nextPost($id)
 function lastEpisode()
 {
 	$postManager = new PostManager();
+	$lastPostId = $postManager->lastPost();
 
-	header('Location: index?action=post&id=' . $postManager->lastPost());
+	header('Location: index?action=post&id=' . $lastPostId);
 
 }
 

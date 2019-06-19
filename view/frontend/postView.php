@@ -3,9 +3,9 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <?php $head = ob_get_clean(); ?>
 <?php ob_start();?>
-<section class="news">
+<section>
 	<h2>Le billet du blog</h2>
-	<article>
+	<article class="news">
 		<h3><?= $post['title'] ?> <em><?= $post['post_date_fr'] ?></em></h3>
 		<p><?= $post['content'] ?></p>
 	</article>

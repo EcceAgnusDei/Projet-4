@@ -1,18 +1,17 @@
 <?php $title = 'Administration'; ?>
 
 <?php ob_start(); ?>
-<header>
+<section>
 	<h1>Bienvenue sur l'interface d'administration de votre site, Mr Forteroche</h1>
 	<nav>
 		<ul>
 			<li><a href="admin.php?action=postadmin">Gérer vos articles</a></li>
 			<li><a href="admin.php?action=commentadminbyid">Gérer les commentaires</a></li>
 			<li><a href="admin.php?action=newpost">Créer un nouvel article</a></li>
-			<li><a href=""></a></li>
 			<li><a href="admin.php?action=logout">Déconnexion</a></li>
 		</ul>
 	</nav>
-</header>
+</section>
 <?= $contentAdmin ?>
 <?php $content = ob_get_clean(); ?>
 

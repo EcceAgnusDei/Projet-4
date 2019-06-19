@@ -13,12 +13,12 @@
     			<h1>Billet simple pour l'Alaska</h1>
     		    <h2>Par Jean Forteroche</h2>
     		</div>
-    		<nav>
+    		<nav class="menu grid">
     			<ul>
-    				<li><a href="index.php">Accueil</a></li>
-                    <li><a href="index.php?action=listPosts">Voir la liste des épisodes</a></li>
-                    <li><a href="index.php?action=lastEpisode">Voir le dernier épisode</a></li>
-    				<li><a href="index.php?action=login">Admin</a></li>
+    				<li><a class="menu-item" href="index.php">Accueil</a></li>
+                    <li><a class="menu-item" href="index.php?action=listPosts">Liste des épisodes</a></li>
+                    <li><a class="menu-item" href="index.php?action=lastEpisode">Dernier épisode</a></li>
+    				<li><a class="menu-item" href="index.php?action=login">Admin</a></li>
     			</ul>
     		</nav>
     	</header>

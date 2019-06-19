@@ -1,28 +1,117 @@
 h1, h2
 {
-    text-align:center;
+    text-align: center;
+    color: #348ffe;
 }
 
 h3
 {
-    background-color:black;
-    color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
+    background-color: black;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 0px;
 }
 .news p
 {
-    background-color:#CCCCCC;
-    margin-top:0px;
+    margin-top: 0px;
 }
 .news
 {
-    width:70%;
-    margin:auto;
+    width: 70%;
+    margin: auto;
+    background-color: #9fcaff;
 }
 
 a
 {
     text-decoration: none;
-    color: blue;
+    color: black;
+}
+
+a:hover
+{
+    color: #348ffe;
+}
+
+ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.grid
+{
+    width: 70%;
+    margin: auto;
+}
+
+
+/*****Header*****/
+
+header
+{
+    height: 300px;
+    background: url(img/header.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #348ffe;
+}
+
+.header-title
+{
+    width: 600px;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title h1
+{
+    font-size: 2.5em;
+    align-self: flex-start;
+    margin: 5px 0;
+}
+
+.header-title h2
+{
+    font-size: 1.5em;
+    align-self: flex-end;
+    margin: 5px 0;
+}
+
+.menu ul
+{
+    height: 10%;
+    font-weight: bold;
+    display: flex;
+}
+
+.menu
+{
+    margin: 5px auto;
+}
+
+.menu-item
+{
+    margin: 0 10px;
+    color: white;
+}
+
+.menu-item:first-child
+{
+    margin-left: 0;
+}
+
+
+/*****Page d'accueil*****/
+
+.home-body
+{
+    
 }
