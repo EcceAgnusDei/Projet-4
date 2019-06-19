@@ -71,6 +71,10 @@ if (isset($_GET['action']))
 			echo 'Erreur : Aucun commentaire n\'est identifié';
 		}
 	}
+	elseif ($_GET['action'] == 'error')
+	{
+		require('view/frontend/errorView.php');
+	}
 }
 else
 {
