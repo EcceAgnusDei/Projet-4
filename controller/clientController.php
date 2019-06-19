@@ -21,6 +21,8 @@ function post()
 
 	$post = $postManager->getPost($_GET['id']);
 	$comments = $commentManager->getComments($_GET['id']);
+	$maxId = $postManager->lastPost();
+	$minId = $postManager->firstPost();
 
 	require('./view/frontend/postView.php');
 }

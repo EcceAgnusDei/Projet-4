@@ -11,8 +11,19 @@
 	</article>
 	<nav>
 		<ul>
+			<?php if ($_GET['id'] > $minId)
+			{
+			?>
 			<li><a href="index.php?action=previous&amp;id=<?=$post['id']?>">Précédent</a></li>
+			<?php
+			}
+			if ($_GET['id'] < $maxId)
+			{
+			?>
 			<li><a href="index.php?action=next&amp;id=<?=$post['id']?>">Suivant</a></li>
+			<?php
+			}
+			?>
 		</ul>
 	</nav>
 </section>

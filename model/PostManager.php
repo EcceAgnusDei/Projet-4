@@ -114,4 +114,37 @@ class PostManager extends Manager
 		}
 		return $idList[$idPosition+1];
 	}
+
+	/**
+	 * Renvoie l'id du dernier article posté
+	 * @return int Id du dernier article posté
+	 */
+	public function lastPost()
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->query('SELECT id FROM posts');
+		$maxId = 0;
+
+		while($data = $request->fetch())
+		{
+			$maxId = $data['id'];
+		}
+		return $maxId;
+	}
+
+	/**
+	 * Renvoie l'id du premier article posté.
+	 * @return int Id du premier article posté.
+	 */
+	public function firstPost()
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->query('SELECT id FROM posts');
+		$maxId = 0;
+
+		$data = $request->fetch();
+		$minId = $data['id'];
+
+		return $minId;
+	}
 }
