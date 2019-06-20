@@ -1,22 +1,16 @@
 <?php $title = 'Mon blog'; ?>
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<h2>Les derniers articles :</h2>
-<section>
+<h2>Table des matières : </h2>
+<section class="grid">
 <?php
 while ($data = $posts->fetch())
 {
 ?>
-    <article class="news">
-        <h3>
-            <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['post_date_fr'] ?></em>
-        </h3>
-        
-        <p>
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire l'article</a></em>
-        </p>
-    </article>
+    <h3 class="episode">
+        <?= htmlspecialchars($data['title']) ?>
+        <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="read-episode">Lire l'épisode</a></em>
+    </h3>
 <?php
 }
 ?>

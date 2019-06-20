@@ -3,24 +3,24 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <?php $head = ob_get_clean(); ?>
 <?php ob_start();?>
-<section>
+<section class="grid">
 	<h2>Le billet du blog</h2>
 	<article class="news">
-		<h3><?= $post['title'] ?> <em><?= $post['post_date_fr'] ?></em></h3>
-		<p><?= $post['content'] ?></p>
+		<h3 class="post-title"><?= $post['title'] ?></h3>
+		<p class="post-content"><?= $post['content'] ?></p>
 	</article>
-	<nav>
+	<nav class="post-nav">
 		<ul>
 			<?php if ($_GET['id'] > $minId)
 			{
 			?>
-			<li><a href="index.php?action=previous&amp;id=<?=$post['id']?>">Précédent</a></li>
+			<li class="post-prev"><a href="index.php?action=previous&amp;id=<?=$post['id']?>">Précédent</a></li>
 			<?php
 			}
 			if ($_GET['id'] < $maxId)
 			{
 			?>
-			<li><a href="index.php?action=next&amp;id=<?=$post['id']?>">Suivant</a></li>
+			<li class="post-next"><a href="index.php?action=next&amp;id=<?=$post['id']?>">Suivant</a></li>
 			<?php
 			}
 			?>
@@ -28,7 +28,7 @@
 	</nav>
 </section>
 
-<section>
+<section class="grid">
 	<h2>Commentaires</h2>
 	<div class="comment-form">
 		<p>Ajouter un commentaire</p>

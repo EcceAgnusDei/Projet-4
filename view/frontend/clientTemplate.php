@@ -4,6 +4,10 @@
         <meta charset="utf-8" />
         <title><?= $title ?></title>
         <link href="public/css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
+
+
         <?= $head ?>
     </head>
         
