@@ -11,7 +11,7 @@ if(isset($_GET['id']))
 	<form action="admin.php?action=updatepost&amp;id=<?= $_GET['id'] ?>" method="POST">
 		<label for="title">Titre</label>
 		<input type="text" name="create-title" id="create-title" value="<?=$post['title'];?>" required>
-		<textarea name="create-content" id="create-content" rows="50" required><?= $post['content']; ?></textarea>
+		<textarea name="create-content" id="create-content" rows="50"><?= $post['content']; ?></textarea>
 		<input type="submit" value="Mettre à jour">
 	</form>
 </section>
@@ -27,7 +27,7 @@ else
 	<form action="admin.php?action=createpost" method="POST">
 		<label for="title">Titre</label>
 		<input type="text" name="create-title" id="create-title" required>
-		<textarea name="create-content" id="create-content" height="700" required></textarea>
+		<textarea name="create-content" id="create-content" rows="50"></textarea>
 		<input type="submit" value="Publier">
 	</form>
 </section>

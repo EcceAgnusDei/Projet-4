@@ -1,12 +1,12 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section>
+<section id="admin-posts">
 	<h2>Vos derniers articles</h2>
 	<?php
 	while($data = $posts->fetch())
 	{
 	?>
-	<div class="news">
+	<div class="news" id="<?= $data['id']; ?>">
         <h3>
             <?= $data['title'] ?>
             <em>le <?= $data['post_date_fr'] ?></em>

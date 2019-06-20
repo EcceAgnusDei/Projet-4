@@ -130,11 +130,11 @@ function createPost($title, $content)
 	$succes = $postManager->addPost($title, $content);
 	if($succes)
 	{
-		echo 'Votre article a bien été publié';
+		header('Location: admin.php?action=postadmin#admin-posts');
 	}
 	else
 	{
-		echo 'Erreur lors de la publication de l\'article';
+		throw new Exception('Erreur lors de la publication de l\'article');
 	}
 }
 
@@ -144,11 +144,11 @@ function deletePost($id)
 	$succes = $postManager->delete($id);
 	if($succes)
 	{
-		echo 'Votre article a bien été supprimé';
+		header('location: admin.php?action=postadmin');
 	}
 	else
 	{
-		echo 'Erreur lors de la suppression de l\'article';
+		throw new Exception('Erreur lors de la suppression de l\'article');
 	}
 }
 
@@ -166,10 +166,10 @@ function updatePost($id, $title, $content)
 	$succes = $postManager->update($id, $title, $content);
 	if($succes)
 	{
-		echo 'Votre article a bien été mis à jour';
+		header('Location: admin.php?action=postadmin#' . $_GET['id']);
 	}
 	else
 	{
-		echo 'Erreur lors de la mise à jour de l\'article';
+		throw new Exception('Erreur lors de la mise à jour de l\'article');
 	}
 }
