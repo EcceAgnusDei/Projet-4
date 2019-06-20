@@ -19,11 +19,6 @@ h3
     padding: 5px 10px;
 }
 
-.news
-{
-    background-color: #9fcaff;
-}
-
 a
 {
     text-decoration: none;
@@ -120,7 +115,7 @@ header
 }
 
 
-/*****Article*****/
+/*****Affichage des épisodes : article et commentaire*****/
 
 .post-title
 {
@@ -142,11 +137,6 @@ header
 .news p:last-child
 {
     display: none;
-}
-
-.Texte
-{
-    margin-bottom: 10px;
 }
 
 .post-nav
@@ -177,7 +167,72 @@ header
     background-color: #9fcaff;
 }
 
+.comment-form
+{
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid #348ffe;
+    border-radius: 3px;
+    width: 70%;
+    padding: 10px 20px;
+}
 
+.comment-form p
+{
+    margin-top: 0;
+    text-align: center;
+}
+
+#create-author, #create-comment
+{
+    margin-bottom: 20px;
+}
+
+#create-comment
+{
+    width: 99%;
+}
+
+.btn
+{
+    background-color: #9fcaff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn:hover
+{
+    background-color: #348ffe;
+}
+
+.comments
+{
+    border: solid 1px #348ffe;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+
+.signal-btn
+{
+    color: #348ffe;
+    text-align: center;
+    margin: 0 2px 2px 0;
+    text-align: right;
+}
+
+.comment-body
+{
+    margin: 2px 0 5px 2px;
+}
+
+.comment-body strong
+{
+    color: #348ffe;
+}
 /****Liste des épidoses*****/
 
 .episode
