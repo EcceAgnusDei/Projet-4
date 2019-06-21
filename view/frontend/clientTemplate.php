@@ -25,6 +25,20 @@
     				<li><a class="menu-item" href="index.php?action=login">Admin</a></li>
     			</ul>
     		</nav>
+            <div class="menu-burger">
+                <input type="checkbox" class="toggler">
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="menu-mobile">
+                    <li><a class="menu-item" href="index.php">Accueil</a></li>
+                    <li><a class="menu-item" href="index.php?action=listPosts">Les épisodes</a></li>
+                    <li><a class="menu-item" href="index.php?action=lastEpisode">Dernier épisode</a></li>
+                    <li><a class="menu-item" href="index.php?action=login">Admin</a></li>
+                </ul>
+            </div>
     	</header>
         <?= $content ?>
     </body>

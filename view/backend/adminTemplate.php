@@ -14,6 +14,7 @@
 		<div class="header-title">
 			<h1>Bienvenue sur l'interface d'administration de votre site, Mr Forteroche !</h1>
 			<h2>Que souhaitez-vous faire ?</h2>
+			<h2 class="responsive-title">Bienvennue, Mr Forteroche</h2>
 		</div>
 		<nav class="menu grid">
 			<ul>
