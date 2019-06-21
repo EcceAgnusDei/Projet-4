@@ -58,9 +58,9 @@
 			<p> <?= nl2br(htmlspecialchars($data['comment'])) ?>
 			</p>
 		</div>
-		<p class="signal-btn">
-			<a href="index.php?action=signal&amp;id=<?=$data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" id="signal-btn-<?=$data['id'] ?>">Signaler</a>
-		</p>
+		<div class="comment-info">
+			<button class="btn" id="signal-btn-<?=$data['id'] ?>" onclick='window.location.href="index.php?action=signal&amp;id=<?=$data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>"'>Signaler</button>
+		</div>
 	</div>
 	<script>
 		if(localStorage.getItem("signal<?=$data['id'] ?>"))
@@ -68,6 +68,7 @@
 			$("#signal-btn-<?=$data['id'] ?>").css('pointer-events', 'none');
 			$("#signal-btn-<?=$data['id'] ?>").css('cursor', 'default');
 			$("#signal-btn-<?=$data['id'] ?>").css('color', 'red');
+			$("#signal-btn-<?=$data['id'] ?>").css('background-color', 'white');
 			$("#signal-btn-<?=$data['id'] ?>").text('Commentaire déjà signalé');
 		}
 		$("#signal-btn-<?=$data['id'] ?>").click(function(){

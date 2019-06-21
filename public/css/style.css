@@ -260,7 +260,7 @@ header
 
 /*****Admin des commentaires*****/
 
-.comment-info p
+.comment-info
 {
-    text-align: right;
+    align-self: flex-end;
 }

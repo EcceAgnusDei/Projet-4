@@ -24,10 +24,9 @@
 		<div class="comment-info">
 			<p> Nombre de signalements : <?= $data['signalement'] ?>
 			</p>
-			<p>
-				<a href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>">Supprimer le commentaire</a>
-			</p>
+			<button class="btn" onclick='window.location.href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>"'>Supprimer</button>
 		</div>
+		
 	</div>
 	<?php
 	}
