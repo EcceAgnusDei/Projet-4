@@ -278,11 +278,19 @@ header
 
 /*****Admin des articles*****/
 
-
 .post-action
 {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+}
+
+/*****Page de créations des articles*****/
+
+#create-title
+{
+    width: 300px;
+    margin-bottom: 30px;
+    margin-left: 20px;
 }

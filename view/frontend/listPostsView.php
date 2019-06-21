@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Table des matières'; ?>
 <?php $head = ''; ?>
 <?php ob_start(); ?>
 <h2>Table des matières : </h2>
