@@ -236,6 +236,7 @@ header
     color: #348ffe;
 }
 
+
 /****Liste des épidoses*****/
 
 .episode
@@ -263,4 +264,18 @@ header
 .comment-info
 {
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.del-btn
+{
+    margin: auto;
+    align-self: center;
+}
+
+.comment-sort ul
+{
+    display: flex;
+    justify-content: space-around;
 }
