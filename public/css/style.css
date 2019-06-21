@@ -1,8 +1,14 @@
 body
 {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-size: 1.3em;
 }
 
+input
+{
+    font-size: 1em;
+}
 
 h1, h2
 {
@@ -14,7 +20,7 @@ h3
 {
     background-color: black;
     color: #9fcaff;
-    font-size: 0.9em;
+    font-size: 1.1em;
     margin-bottom: 0px;
     padding: 5px 10px;
 }
@@ -60,7 +66,7 @@ header
 
 .header-title
 {
-    width: 500px;
+    width: 600px;
     height: 90%;
     margin: auto;
     display: flex;
@@ -85,15 +91,16 @@ header
 
 .menu ul
 {
-    height: 10%;
     font-weight: bold;
+    font-size: 1.2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .menu
 {
     margin: 5px auto;
+    height: 10%;
 }
 
 .menu-item
@@ -198,6 +205,9 @@ header
     border-radius: 2px;
     font-weight: bold;
     color: white;
+    margin-top: 5px;
+    font-size: 1em;
+
 }
 
 .btn:hover
@@ -250,7 +260,13 @@ header
 
 .header-admin .header-title
 {
+    font-size: 0.8em;
     width: 70%;
+}
+
+.header-admin a
+{
+    font-size: 0.8em;
 }
 
 
@@ -294,3 +310,34 @@ header
     margin-bottom: 30px;
     margin-left: 20px;
 }
+
+
+/*****Responsivité*****/
+
+@media (max-width: 1000px)
+{
+    .grid
+    {
+        width: 95%;
+    }
+    
+    .header-admin .header-title
+    {
+        font-size: 0.8em;
+        width: 90%;
+    }
+
+    .header-title
+    {
+        width: 90%;
+    }
+
+    .login-form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px)

@@ -8,8 +8,8 @@ while ($data = $posts->fetch())
 {
 ?>
     <h3 class="episode">
-        <?= htmlspecialchars($data['title']) ?>
-        <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="read-episode">Lire l'épisode</a></em>
+        
+        <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="read-episode"><?= htmlspecialchars($data['title']) ?></a></em>
     </h3>
 <?php
 }

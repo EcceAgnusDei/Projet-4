@@ -2,8 +2,8 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
 <section class="grid">
-	<h1>Administation</h1>
-	<form action="./index.php?action=identifying" method="post">
+	<h1>Administration</h1>
+	<form action="./index.php?action=identifying" method="post" class="login-form">
 		<label for="login">Identifiant</label>
 		<input type="text" name="login" id="login">
 		<label for="password">Mot de passe</label>
