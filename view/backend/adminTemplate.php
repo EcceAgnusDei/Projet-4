@@ -24,6 +24,21 @@
 				<li><a href="admin.php?action=logout" class="menu-item">Déconnexion</a></li>
 			</ul>
 		</nav>
+		<div class="menu-burger">
+			<input type="checkbox" class="toggler">
+			<div class="hamburger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<ul class="menu-mobile">
+				<li><a href="admin.php?action=postadmin" class="menu-item">Mes articles</a></li>
+				<li><a href="admin.php?action=commentadminbyid" class="menu-item">Commentaires</a></li>
+				<li><a href="admin.php?action=newpost" class="menu-item">Nouvel article</a></li>
+				<li><a href="index.php" class="menu-item">Accueil</a></li>
+				<li><a href="admin.php?action=logout" class="menu-item">Déconnexion</a></li>
+			</ul>
+		</div>
 	</header>
 	<?= $contentAdmin ?>
 </body>
