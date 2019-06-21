@@ -51,10 +51,16 @@
 	{
 	?>
 	<div class="comments">
-		<p class="comment-body">
-			<strong><?= htmlspecialchars($data['author']) ?></strong><em> le <?= $data['comment_date_fr'] ?></em> : </br> <?= nl2br(htmlspecialchars($data['comment'])) ?>
+		<div class="comment-body">
+			<p>
+				<strong><?= htmlspecialchars($data['author']) ?></strong><em> le <?= $data['comment_date_fr'] ?></em> :
+			</p>
+			<p> <?= nl2br(htmlspecialchars($data['comment'])) ?>
+			</p>
+		</div>
+		<p class="signal-btn">
+			<a href="index.php?action=signal&amp;id=<?=$data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" id="signal-btn-<?=$data['id'] ?>">Signaler</a>
 		</p>
-		<p class="signal-btn"><a href="index.php?action=signal&amp;id=<?=$data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" id="signal-btn-<?=$data['id'] ?>">Signaler</a></p>
 	</div>
 	<script>
 		if(localStorage.getItem("signal<?=$data['id'] ?>"))

@@ -22,7 +22,7 @@ h3
 a
 {
     text-decoration: none;
-    color: black;
+    color: #348ffe;
 }
 
 a:hover
@@ -88,6 +88,7 @@ header
     height: 10%;
     font-weight: bold;
     display: flex;
+    justify-content: space-between;
 }
 
 .menu
@@ -214,25 +215,27 @@ header
     border: solid 1px #348ffe;
     border-radius: 3px;
     margin: 5px 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.signal-btn
+.comments form
 {
-    color: #348ffe;
-    text-align: center;
-    margin: 0 2px 2px 0;
-    text-align: right;
+    align-self: flex-end;
 }
 
-.comment-body
+.comment-body p:first-child
 {
-    margin: 2px 0 5px 2px;
+    margin: 0;
 }
 
 .comment-body strong
 {
     color: #348ffe;
 }
+
 /****Liste des épidoses*****/
 
 .episode
@@ -240,7 +243,24 @@ header
     display: flex;
     justify-content: space-between;
 }
+
 .read-episode
 {
     color: #9fcaff;
+}
+
+
+/*****Header de l'admin*****/
+
+.header-admin .header-title
+{
+    width: 70%;
+}
+
+
+/*****Admin des commentaires*****/
+
+.comment-info p
+{
+    text-align: right;
 }

@@ -75,7 +75,7 @@ try
 		}
 		else
 		{
-			require('view/backend/adminView.php');
+			postAdmin();
 		}
 	}
 	else

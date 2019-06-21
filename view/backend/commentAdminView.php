@@ -1,6 +1,6 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section>
+<section class="grid">
 	<h2>Les derniers commentaires</h2>
 	<div>
 		<a href="admin.php?action=commentadminbyid">Trier par date</a>
@@ -11,19 +11,24 @@
 	{
 	?>
 	<div class="comments">
-        <p>
-            <?= htmlspecialchars($data['author']) ?>
-            <em>le <?= $data['comment_date_fr'] ?></em>
-        </p>
-        
-        <p>
-            <?= nl2br(htmlspecialchars($data['comment'])) ?>
-        </p>
-		<p>
-			<a href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>">Supprimer le commentaire</a>
-		</p>
-		<p> Nombre de signalements : <?= $data['signalement'] ?>
-    </div>
+		<div class="comment-body">
+			<p>
+				<strong><?= htmlspecialchars($data['author']) ?></strong>
+				<em>le <?= $data['comment_date_fr'] ?> :</em>
+			</p>
+
+			<p>
+				<?= nl2br(htmlspecialchars($data['comment'])) ?>
+			</p>
+		</div>
+		<div class="comment-info">
+			<p> Nombre de signalements : <?= $data['signalement'] ?>
+			</p>
+			<p>
+				<a href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>">Supprimer le commentaire</a>
+			</p>
+		</div>
+	</div>
 	<?php
 	}
 	$comments->closeCursor();

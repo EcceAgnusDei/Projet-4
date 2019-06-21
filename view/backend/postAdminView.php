@@ -1,6 +1,6 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section id="admin-posts">
+<section id="admin-posts" class="grid">
 	<h2>Vos derniers articles</h2>
 	<?php
 	while($data = $posts->fetch())
