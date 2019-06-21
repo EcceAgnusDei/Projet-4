@@ -1,11 +1,12 @@
-<?php $head = ''; ?>
+<?php $head = '	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+'; ?>
 <?php ob_start(); ?>
 <section class="grid">
 	<h2>La liste des commentaires</h2>
 	<nav class="comment-sort">
 		<ul>
-			<li><a href="admin.php?action=commentadminbyid">Trier par date</a></li>
-			<li><a href="admin.php?action=commentadminbysignal">Trier par nombre de signalement</a></li>
+			<li><a href="admin.php?action=commentadminbyid">Trier par date <i class="fas fa-sort-down"></i></a></li>
+			<li><a href="admin.php?action=commentadminbysignal">Trier par nombre de signalement <i class="fas fa-sort-down"></i></a></li>
 		</ul>
 	</nav>
 	<?php

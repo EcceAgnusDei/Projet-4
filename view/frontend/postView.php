@@ -6,7 +6,7 @@
 <section class="grid">
 	<article class="news">
 		<h3 class="post-title"><?= $post['title'] ?></h3>
-		<p class="post-content"><?= $post['content'] ?></p>
+		<?= $post['content'] ?>
 	</article>
 	<nav class="post-nav">
 		<ul>

@@ -1,7 +1,7 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
 <section id="admin-posts" class="grid">
-	<h2>Vos derniers articles</h2>
+	<h2>Vos articles</h2>
 	<?php
 	while($data = $posts->fetch())
 	{
@@ -11,14 +11,11 @@
             <?= $data['title'] ?>
             <em>le <?= $data['post_date_fr'] ?></em>
         </h3>
-        
-        <p>
-            <?= $data['content'] ?>
-        </p>
-        <ul>
-        	<li><a href="admin.php?action=deletepost&amp;id=<?= $data['id']; ?>">Supprimer</a></li>
-        	<li><a href="admin.php?action=updatepostview&amp;id=<?= $data['id']; ?>">Mettre à jour</a></li>
-        </ul>
+        <?= $data['content'] ?>
+        <div class="post-action">
+        	<a href="admin.php?action=deletepost&amp;id=<?= $data['id']; ?>">Supprimer</a>
+        	<a href="admin.php?action=updatepostview&amp;id=<?= $data['id']; ?>">Mettre à jour</a>
+        </div>
     </div>
 	<?php
 	}

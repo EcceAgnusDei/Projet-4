@@ -135,11 +135,6 @@ header
     margin: 0;
 }
 
-.news p:last-child
-{
-    display: none;
-}
-
 .post-nav
 {
     height: 20px;
@@ -278,4 +273,16 @@ header
 {
     display: flex;
     justify-content: space-around;
+}
+
+
+/*****Admin des articles*****/
+
+
+.post-action
+{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
 }
