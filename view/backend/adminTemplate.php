@@ -6,15 +6,16 @@
 	<link href="public/css/style.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="././Public/css/img/favicon.png">
 
 	<?= $head ?>
 </head>  
 <body>
 	<header class="header-admin">
 		<div class="header-title">
-			<h1>Bienvenue sur l'interface d'administration de votre site, Mr Forteroche !</h1>
-			<h2>Que souhaitez-vous faire ?</h2>
-			<h2 class="responsive-title">Bienvennue, Mr Forteroche</h2>
+			<h1 class="responsive-none">Bienvenue sur l'interface d'administration de votre site, Mr Forteroche !</h1>
+			<h2 class="responsive-none">Que souhaitez-vous faire ?</h2>
+			<p>Bienvennue, Mr Forteroche</p>
 		</div>
 		<nav class="menu grid">
 			<ul>

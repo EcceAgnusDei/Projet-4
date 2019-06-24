@@ -62,7 +62,7 @@ try
 			}
 			else
 			{
-				echo "<p>L'authentification a échoué... <a href='index.php'>Revenir à l'accueil</a></p>";
+				logingError();
 			}
 		}
 		elseif ($_GET['action'] == 'signal')

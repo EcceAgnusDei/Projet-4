@@ -6,7 +6,7 @@
         <link href="public/css/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
-
+        <link rel="shortcut icon" type="image/png" href="././Public/css/img/favicon.png">
 
         <?= $head ?>
     </head>
@@ -15,7 +15,7 @@
     	<header>
     		<div class="header-title">
     			<h1>Billet simple pour l'Alaska</h1>
-    		    <h2>Par Jean Forteroche</h2>
+    		    <h2 class="responsive-none">Par Jean Forteroche</h2>
     		</div>
     		<nav class="menu grid">
     			<ul>

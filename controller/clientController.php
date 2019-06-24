@@ -76,6 +76,13 @@ function signal($commentId)
 
 function login()
 {
+	$error = '';
+	require('./view/backend/loginView.php');
+}
+
+function logingError()
+{
+	$error = "<p style='color: red'>Identifiant ou mot de passe incorrect</p>";
 	require('./view/backend/loginView.php');
 }
 
