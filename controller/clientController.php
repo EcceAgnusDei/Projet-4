@@ -23,6 +23,7 @@ function post()
 	$comments = $commentManager->getComments($_GET['id']);
 	$maxId = $postManager->lastPost();
 	$minId = $postManager->firstPost();
+	$nbComments = $commentManager->countComments($_GET['id']);
 
 	require('./view/frontend/postView.php');
 }
@@ -71,7 +72,31 @@ function addComment($postId, $author, $comment)
 function signal($commentId)
 {
 	$commentManager = new CommentManager();
-	$commentManager->signal($commentId);
+	$succes = $commentManager->signal($commentId);
+
+	if ($succes === false)
+	{
+		throw new Exception('Le commentaire n\'a pu être signalé...');
+	}
+	else
+	{
+		header('Location: index.php?action=post&id=' . $_GET['post_id']);
+	}
+}
+
+function unsignal($commentId)
+{
+	$commentManager = new CommentManager();
+	$succes = $commentManager->unsignal($commentId);
+
+	if ($succes === false)
+	{
+		throw new Exception('Le commentaire n\'a pu être signalé...');
+	}
+	else
+	{
+		header('Location: admin.php?action=commentadminbysignal');
+	}
 }
 
 function login()

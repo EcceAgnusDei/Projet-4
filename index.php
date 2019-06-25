@@ -70,7 +70,6 @@ try
 			if (isset($_GET['id']) && $_GET['id'] > 0)
 			{
 				signal($_GET['id']);
-				header('Location: index.php?action=post&id=' . $_GET['post_id']);
 			}
 			else
 			{

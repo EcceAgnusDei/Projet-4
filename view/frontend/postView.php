@@ -28,7 +28,7 @@
 </section>
 
 <section class="grid">
-	<h2>Commentaires</h2>
+	<h2>Commentaires (<?= $nbComments ?>)</h2>
 	<div class="comment-form">
 		<p>Ajouter un commentaire</p>
 		<form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">

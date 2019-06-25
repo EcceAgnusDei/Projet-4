@@ -14,7 +14,7 @@ class CommentManager extends Manager
 	public function getComments($postId)
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$comments = $dataBase->prepare('SELECT id, author, post_id, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY id DESC');
+		$comments = $dataBase->prepare('SELECT id, author, post_id, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY id DESC');
 		$comments->execute(array($postId));
 
 		return $comments;
@@ -28,7 +28,7 @@ class CommentManager extends Manager
 	public function getAllById()
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments ORDER BY id DESC');
+		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments ORDER BY id DESC');
 
 		return $comments;
 	}
@@ -41,7 +41,7 @@ class CommentManager extends Manager
 	public function getAllBySignal()
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE signalement > 0 ORDER BY signalement DESC');
+		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE signalement > 0 ORDER BY signalement DESC');
 
 		return $comments;
 	}
@@ -85,6 +85,19 @@ class CommentManager extends Manager
 	}
 
 	/**
+	 * Annule le signalement d'un commentaire
+	 * @param  id $commentId Id du commentaire dont on veut annuler les signalements
+	 * @return bool            Renvoie true si l'accion s'est bien déroulée
+	 */
+	public function unsignal($commentId)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->prepare('UPDATE comments SET signalement = 0 WHERE id = ?');
+		$succes = $request->execute(array($commentId));
+		return $succes;
+	}
+
+	/**
 	 * permet de supprimer un commentaire
 	 * @param  int $id Id du commentaire à supprimer
 	 * @return bool     Renvoie true si le commentaire à bien été supprimé
@@ -96,5 +109,20 @@ class CommentManager extends Manager
 		$succes = $del->execute(array($id));
 
 		return $succes;
+	}
+
+	/**
+	 * Permet de compter le nombre de commentaires d'un article
+	 * @param  int $id Id de l'article dont l'on veut compter le nombre de commentaires
+	 * @return int     Le nombre de commentaires
+	 */
+	public function countComments($id)
+	{
+		$dataBase = $this->dbConnect('projet4');
+		$request = $dataBase->prepare('SELECT COUNT(*) AS nb_comments FROM comments WHERE post_id = ?');
+		$request->execute(array($id));
+		$data = $request->fetch();
+
+		return $data['nb_comments'];
 	}
 }

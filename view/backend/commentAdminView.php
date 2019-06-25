@@ -5,8 +5,8 @@
 	<h2>La liste des commentaires</h2>
 	<nav class="comment-sort">
 		<ul>
-			<li><a href="admin.php?action=commentadminbyid">Trier par date <i class="fas fa-sort-down"></i></a></li>
-			<li><a href="admin.php?action=commentadminbysignal">Trier par nombre de signalement <i class="fas fa-sort-down"></i></a></li>
+			<li><a href="admin.php?action=commentadminbyid" <?php if($_GET['action']=='commentadminbyid'){echo "style= 'border-top: 1px solid #348ffe;'";} ?> >Trier par date <i class="fas fa-sort-down"></i></a></li>
+			<li><a href="admin.php?action=commentadminbysignal" <?php if($_GET['action']=='commentadminbysignal'){echo "style= 'border-top: 1px solid #348ffe;'";} ?> >Trier par nombre de signalement <i class="fas fa-sort-down"></i></a></li>
 		</ul>
 	</nav>
 	<?php
@@ -27,7 +27,10 @@
 		<div class="comment-info">
 			<p> Nombre de signalements : <?= $data['signalement'] ?>
 			</p>
-			<button class="btn del-btn" onclick='window.location.href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>"'>Supprimer</button>
+			<div class="comment-info-btn">
+				<button class="btn del-btn" onclick='window.location.href="admin.php?action=deletecomment&amp;id=<?=$data['id']?>"'>Supprimer</button>
+				<button class="btn" onclick='window.location.href="admin.php?action=unsignal&amp;id=<?=$data['id']?>"'>Approuver</button>
+			</div>
 		</div>
 		
 	</div>

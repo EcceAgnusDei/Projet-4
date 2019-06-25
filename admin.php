@@ -72,6 +72,17 @@ try
 			{
 				updatePost($_GET['id'], $_POST['create-title'], $_POST['create-content']);
 			}
+			elseif ($_GET['action'] == 'unsignal')
+			{
+				if (isset($_GET['id']) && $_GET['id'] > 0)
+				{
+					unsignal($_GET['id']);
+				}
+				else
+				{
+					throw new Exception('Aucun commentaire n\'est identifié');
+				}
+			}
 		}
 		else
 		{
