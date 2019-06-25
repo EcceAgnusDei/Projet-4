@@ -353,6 +353,10 @@ header
     flex-direction: column;
 }
 
+.show-post
+{
+    margin-bottom: 0;
+}
 /*.del-btn
 {
     margin: auto;

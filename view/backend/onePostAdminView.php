@@ -30,7 +30,7 @@
 	while ($data = $comments->fetch())
 	{
 	?>
-	<div class="comments">
+	<div class="comments" <?php if(isset($_GET['comment_id']) && $_GET['comment_id'] == $data['id']) { echo "style='border: solid 2px red;'";}?>>
 		<div class="comment-body">
 			<p>
 				<strong><?= htmlspecialchars($data['author']) ?></strong>

@@ -23,6 +23,7 @@
 			<p>
 				<?= nl2br(htmlspecialchars($data['comment'])) ?>
 			</p>
+			<p class="show-post"><a href="admin.php?action=onepostadmin&amp;id=<?= $data['post_id']?>&amp;comment_id=<?= $data['id'] ?>">Afficher</a></p>
 		</div>
 		<div class="comment-info">
 			<p> Nombre de signalements : <?= $data['signalement'] ?>

@@ -28,7 +28,7 @@ class CommentManager extends Manager
 	public function getAllById()
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments ORDER BY id DESC');
+		$comments = $dataBase->query('SELECT id, post_id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments ORDER BY id DESC');
 
 		return $comments;
 	}
@@ -41,7 +41,7 @@ class CommentManager extends Manager
 	public function getAllBySignal()
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$comments = $dataBase->query('SELECT id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE signalement > 0 ORDER BY signalement DESC');
+		$comments = $dataBase->query('SELECT id, post_id, author, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE signalement > 0 ORDER BY signalement DESC');
 
 		return $comments;
 	}
