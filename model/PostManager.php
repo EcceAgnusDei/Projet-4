@@ -14,7 +14,7 @@ class PostManager extends Manager
 	public function getPosts()
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$request = $dataBase->query('SELECT id, title, content, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS post_date_fr FROM posts ORDER BY id DESC');
+		$request = $dataBase->query('SELECT id, title, content, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin\') AS post_date_fr FROM posts ORDER BY id DESC');
 
 		return $request;
 	}
@@ -27,7 +27,7 @@ class PostManager extends Manager
 	public function getPost($postId)
 	{
 		$dataBase = $this->dbConnect('projet4');
-		$request = $dataBase->prepare('SELECT id, title, content, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS post_date_fr FROM posts WHERE id = ?');
+		$request = $dataBase->prepare('SELECT id, title, content, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin\') AS post_date_fr FROM posts WHERE id = ?');
 		$request->execute(array($postId));
 		$post = $request->fetch();
 

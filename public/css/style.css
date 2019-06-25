@@ -374,13 +374,41 @@ header
 
 /*****Admin des articles*****/
 
-.post-action
+.table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr
+{
+    border-bottom: 1px solid #348ffe;
+}
+
+.table tr:hover
+{
+    background-color: #c7e0ff;
+}
+
+.table tr:last-child
+{
+    border: none;
+}
+
+.table-post-action
 {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
 }
+
+.table-post-action a:last-child
+{
+    min-width: 141px;
+    margin-left: 10px;
+}
+
 
 /*****Page de créations des articles*****/
 
