@@ -9,7 +9,7 @@
 	?>
 	<tr id="<?= $data['id']; ?>">
         <th class="table-post-title">
-            <?= $data['title'] ?>
+            <a href="admin.php?action=onepostadmin&amp;id=<?= $data['id']; ?>"><?= $data['title'] ?></a>
         </th>
         <th class="table-post-date">
         	<?= $data['post_date_fr'] ?>

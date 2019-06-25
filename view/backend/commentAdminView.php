@@ -32,7 +32,6 @@
 				<button class="btn" onclick='window.location.href="admin.php?action=unsignal&amp;id=<?=$data['id']?>"'>Approuver</button>
 			</div>
 		</div>
-		
 	</div>
 	<?php
 	}

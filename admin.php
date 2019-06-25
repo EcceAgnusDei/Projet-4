@@ -23,6 +23,42 @@ try
 					postadmin();
 				}
 				break;
+				case 'onepostadmin':
+				{
+					if(isset($_GET['id']))
+					{
+						onePostAdmin($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun Id renseigné');
+					}
+				}
+				break;
+				case 'previous':
+				{
+					if (isset($_GET['id']))
+					{
+						adminPreviousPost($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun id renseigné');
+					}
+				}
+				break;
+				case 'next':
+				{
+					if (isset($_GET['id']))
+					{
+						adminNextPost($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun id renseigné');
+					}
+				}
+				break;
 				case 'commentadminbyid':
 				{
 					listCommentsById();

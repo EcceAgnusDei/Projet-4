@@ -132,6 +132,21 @@ function postAdmin()
 	require ('view/backend/postAdminView.php');
 }
 
+function onePostAdmin($id)
+{
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
+
+	$maxId = $postManager->lastPost();
+	$minId = $postManager->firstPost();
+
+	$post = $postManager->getPost($_GET['id']);
+	$comments = $commentManager->getComments($_GET['id']);
+	$nbComments = $commentManager->countComments($_GET['id']);
+
+	require('./view/backend/onePostAdminView.php');
+}
+
 function listCommentsById()
 {
 	$commentManager = new CommentManager();
@@ -153,7 +168,14 @@ function deleteComment($id)
 	$commentManager = new CommentManager();
 	$commentManager->delete($id);
 
-	listCommentsBySignal();
+	if(isset($_GET['post_id']))
+	{
+		header('location: admin.php?action=onepostadmin&id=' . $_GET['post_id']);
+	}
+	else
+	{
+		header('location: admin.php?action=commentadminbyid');
+	}
 }
 
 function createPost($title, $content)
@@ -205,3 +227,20 @@ function updatePost($id, $title, $content)
 		throw new Exception('Erreur lors de la mise à jour de l\'article');
 	}
 }
+
+function adminPreviousPost($id)
+{
+	$postManager = new PostManager();
+	$idPrev = $postManager->previous($id);
+
+	header('Location: admin?action=onepostadmin&id=' . $idPrev);
+}
+
+function adminNextPost($id)
+{
+	$postManager = new PostManager();
+	$idNext = $postManager->next($id);
+
+	header('Location: admin?action=onepostadmin&id=' . $idNext);
+}
+
