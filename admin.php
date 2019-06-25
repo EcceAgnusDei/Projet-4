@@ -11,77 +11,91 @@ try
 	{
 		if (isset($_GET['action']))
 		{
-			if ($_GET['action'] == 'logout')
+			switch ($_GET['action'])
 			{
-				logout();
-			}
-			elseif ($_GET['action'] == 'postadmin')
-			{
-				postadmin();
-			}
-			elseif ($_GET['action'] == 'commentadminbyid')
-			{
-				listCommentsById();
-			}
-			elseif ($_GET['action'] == 'commentadminbysignal')
-			{
-				listCommentsBySignal();
-			}
-			elseif ($_GET['action'] == 'deletecomment')
-			{
-				if(isset($_GET['id']))
+				case 'logout':
 				{
-					deleteComment($_GET['id']);
+					logout();
 				}
-				else
+				break;
+				case 'postadmin':
 				{
-					throw new Exception('Aucun Id renseigné');
+					postadmin();
 				}
-			}
-			elseif ($_GET['action'] == 'newpost')
-			{
-				require('view/backend/createPostView.php');
-			}
-			elseif ($_GET['action'] == 'createpost')
-			{
-				createPost($_POST['create-title'], $_POST['create-content']);
-			}
-			elseif ($_GET['action'] == 'deletepost')
-			{
-				if(isset($_GET['id']))
+				break;
+				case 'commentadminbyid':
 				{
-					deletePost($_GET['id']);
+					listCommentsById();
 				}
-				else
+				break;
+				case 'commentadminbysignal':
 				{
-					throw new Exception('Aucun Id renseigné');
+					listCommentsBySignal();
 				}
-			}
-			elseif ($_GET['action'] == 'updatepostview')
-			{
-				if(isset($_GET['id']))
+				break;
+				case 'deletecomment':
 				{
-					updatePostView($_GET['id']);
+					if(isset($_GET['id']))
+					{
+						deleteComment($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun Id renseigné');
+					}
 				}
-				else
+				break;
+				case 'newpost':
 				{
-					throw new Exception('Aucun Id renseigné');
+					require('view/backend/createPostView.php');
 				}
-			}
-			elseif ($_GET['action'] == 'updatepost')
-			{
-				updatePost($_GET['id'], $_POST['create-title'], $_POST['create-content']);
-			}
-			elseif ($_GET['action'] == 'unsignal')
-			{
-				if (isset($_GET['id']) && $_GET['id'] > 0)
+				break;
+				case 'createpost':
 				{
-					unsignal($_GET['id']);
+					createPost($_POST['create-title'], $_POST['create-content']);
 				}
-				else
+				break;
+				case 'deletepost':
 				{
-					throw new Exception('Aucun commentaire n\'est identifié');
+					if(isset($_GET['id']))
+					{
+						deletePost($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun Id renseigné');
+					}
 				}
+				break;
+				case 'updatepostview':
+				{
+					if(isset($_GET['id']))
+					{
+						updatePostView($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun Id renseigné');
+					}
+				}
+				break;
+				case 'updatepost':
+				{
+					updatePost($_GET['id'], $_POST['create-title'], $_POST['create-content']);
+				}
+				break;
+				case 'unsignal':
+				{
+					if (isset($_GET['id']) && $_GET['id'] > 0)
+					{
+						unsignal($_GET['id']);
+					}
+					else
+					{
+						throw new Exception('Aucun commentaire n\'est identifié');
+					}
+				}
+				break;
 			}
 		}
 		else
