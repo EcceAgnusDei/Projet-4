@@ -6,6 +6,10 @@ if(session_status() == PHP_SESSION_NONE)
 require_once('./model/PostManager.php');
 require_once('./model/CommentManager.php');
 
+/**
+ * Affiche la liste des articles
+ * 
+ */
 function listPosts()
 {
 	$postManager = new PostManager();
@@ -14,6 +18,10 @@ function listPosts()
 	require('./view/frontend/listPostsView.php');
 }
 
+/**
+ * Affiche un article grâce à son id obtenu par une variable superlocale
+ * 
+ */
 function post()
 {
 	$postManager = new PostManager();
@@ -28,6 +36,10 @@ function post()
 	require('./view/frontend/postView.php');
 }
 
+/**
+ * Renvoie vers l'article précédent
+ * @param  int $id id de l'article courant 
+ */
 function previousPost($id)
 {
 	$postManager = new PostManager();
@@ -36,6 +48,10 @@ function previousPost($id)
 	header('Location: index?action=post&id=' . $idPrev);
 }
 
+/**
+ * Renvoie vers l'article suivant
+ * @param  int $id id de l'article courant
+ */
 function nextPost($id)
 {
 	$postManager = new PostManager();
@@ -44,15 +60,23 @@ function nextPost($id)
 	header('Location: index?action=post&id=' . $idNext);
 }
 
+/**
+ * Renvoie vers le dernier article en date
+ */
 function lastEpisode()
 {
 	$postManager = new PostManager();
 	$lastPostId = $postManager->lastPost();
 
 	header('Location: index?action=post&id=' . $lastPostId);
-
 }
 
+/**
+ * Ajoute un commentaire
+ * @param int $postId  id de l'article commenté
+ * @param string $author  Nom de l'auteur de l'article
+ * @param string $comment Contenu du commentaire
+ */
 function addComment($postId, $author, $comment)
 {
 	$commentManager = new CommentManager();
@@ -69,6 +93,10 @@ function addComment($postId, $author, $comment)
 	}
 }
 
+/**
+ * Signal un commentaire
+ * @param  int $commentId id du commentaire à signaler
+ */
 function signal($commentId)
 {
 	$commentManager = new CommentManager();
@@ -84,6 +112,10 @@ function signal($commentId)
 	}
 }
 
+/**
+ * Annul le signalement (remet le nombre de signalement à 0)
+ * @param  int $commentId id du commentaire dont on veut annuler le signalement
+ */
 function unsignal($commentId)
 {
 	$commentManager = new CommentManager();
@@ -99,18 +131,30 @@ function unsignal($commentId)
 	}
 }
 
+/**
+ * Redirige vers la page de connexion
+ * @return [type] [description]
+ */
 function login()
 {
 	$error = '';
 	require('./view/backend/loginView.php');
 }
 
+/**
+ * Redirige vers la page de connexion lorsque les identifiant/mot de passe ne sont pas bons.
+ */
 function logingError()
 {
 	$error = "<p style='color: red'>Identifiant ou mot de passe incorrect</p>";
 	require('./view/backend/loginView.php');
 }
 
+/**
+ * Ouvre la session admin
+ * @param  string $user     identifiant
+ * @param  string $password mot de passe
+ */
 function admin($user, $password)
 {
 	$_SESSION['user'] = $user;
@@ -118,12 +162,18 @@ function admin($user, $password)
 	header('Location: admin.php');
 }
 
+/**
+ * Ferme la session admin
+ */
 function logout()
 {
 	session_destroy();
 	header('Location: index.php');
 }
 
+/**
+ * Redirige vers la page d'administration des posts
+ */
 function postAdmin()
 {
 	$postManager = new PostManager();
@@ -132,6 +182,10 @@ function postAdmin()
 	require ('view/backend/postAdminView.php');
 }
 
+/**
+ * Redirige vers la page d'administrations d'un seul post
+ * @param  int $id id du post que l'on veut administrer
+ */
 function onePostAdmin($id)
 {
 	$postManager = new PostManager();
@@ -147,6 +201,9 @@ function onePostAdmin($id)
 	require('./view/backend/onePostAdminView.php');
 }
 
+/**
+ * Affiche la liste des commentaires du plus récent au plus ancien
+ */
 function listCommentsById()
 {
 	$commentManager = new CommentManager();
@@ -155,6 +212,9 @@ function listCommentsById()
 	require('view/backend/commentAdminView.php');
 }
 
+/**
+ * Affiche la liste des commentaires du plus signalé au moins signalé
+ */
 function listCommentsBySignal()
 {
 	$commentManager = new CommentManager();
@@ -163,6 +223,10 @@ function listCommentsBySignal()
 	require('view/backend/commentAdminView.php');
 }
 
+/**
+ * Supprime un commenantaire
+ * @param  int $id id du commentaire à supprimer
+ */
 function deleteComment($id)
 {
 	$commentManager = new CommentManager();
@@ -178,6 +242,11 @@ function deleteComment($id)
 	}
 }
 
+/**
+ * Enregistre un post dans la base de données
+ * @param  string $title   Titre du post
+ * @param  string $content Contenu du post
+ */
 function createPost($title, $content)
 {
 	$postManager = new PostManager();
@@ -192,6 +261,10 @@ function createPost($title, $content)
 	}
 }
 
+/**
+ * Supprime un post
+ * @param  int $id id du post que l'on veut supprimer
+ */
 function deletePost($id)
 {
 	$postManager = new PostManager();
@@ -206,6 +279,10 @@ function deletePost($id)
 	}
 }
 
+/**
+ * Renvoie à la page permettant la mise à jour d'un post
+ * @param  int $id id du post que l'on veut mettre à jour
+ */
 function updatePostView($id)
 {
 	$postManager = new PostManager();
@@ -214,6 +291,12 @@ function updatePostView($id)
 	require('view/backend/createPostView.php');
 }
 
+/**
+ * Met à jour le post
+ * @param  int $id      id du post mis à jour
+ * @param  string $title   nouveau titre du post
+ * @param  string $content nouveau contenu du post
+ */
 function updatePost($id, $title, $content)
 {
 	$postManager = new PostManager();
@@ -228,6 +311,10 @@ function updatePost($id, $title, $content)
 	}
 }
 
+/**
+ * Renvoie au post précédent coté admin
+ * @param  int $id id du post courant
+ */
 function adminPreviousPost($id)
 {
 	$postManager = new PostManager();
@@ -236,6 +323,10 @@ function adminPreviousPost($id)
 	header('Location: admin?action=onepostadmin&id=' . $idPrev);
 }
 
+/**
+ * Renvoie au post suivant coté admin
+ * @param  int $id id du post courant
+ */
 function adminNextPost($id)
 {
 	$postManager = new PostManager();

@@ -6,7 +6,7 @@
 
         <title><?= $title ?></title>
         
-        <link href="public/css/style.css" rel="stylesheet" />
+        <link href="/projet-4/public/css/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="././Public/css/img/favicon.png">
