@@ -5,6 +5,10 @@
 		<h3 class="post-title"><?= $post['title'] ?></h3>
 		<?= $post['content'] ?>
 	</article>
+	<div class="one-post-action">
+		<button class="btn" onclick='window.location.href="admin.php?action=deletepost&id=<?= $post['id']; ?>"'>Supprimer</button>
+		<a class="btn" href="admin.php?action=updatepostview&amp;id=<?= $post['id']; ?>">Mettre à jour</a>
+	</div>
 	<nav class="post-nav">
 		<ul>
 			<?php if ($_GET['id'] > $minId)

@@ -18,8 +18,8 @@
         	<?= $data['post_date_fr'] ?>
         </th>
         <th class="table-post-action">
-        	<a href="admin.php?action=deletepost&amp;id=<?= $data['id']; ?>">Supprimer</a>
-        	<a href="admin.php?action=updatepostview&amp;id=<?= $data['id']; ?>">Mettre à jour</a>
+        	<button class="btn" onclick='window.location.href="admin.php?action=deletepost&id=<?= $data['id']; ?>"'>Supprimer</button>
+        	<a class="btn" href="admin.php?action=updatepostview&amp;id=<?= $data['id']; ?>">Mettre à jour</a>
         </th>
     </tr>
 	<?php
