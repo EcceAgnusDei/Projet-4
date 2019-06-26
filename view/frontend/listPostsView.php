@@ -9,7 +9,7 @@ while ($data = $posts->fetch())
 ?>
     <h3 class="episode">
         
-        <em><a href="episode-<?= $data['id'] ?>" class="read-episode"><?= $data['title'] ?></a></em>
+        <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="read-episode"><?= htmlspecialchars($data['title']) ?></a></em>
     </h3>
 <?php
 }
@@ -21,4 +21,4 @@ $posts->closeCursor();
 $content = ob_get_clean(); 
 ?>
 
-<?php require('view/frontend/clientTemplate.php'); ?>
+<?php require('./view/frontend/clientTemplate.php'); ?>

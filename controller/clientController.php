@@ -3,8 +3,8 @@ if(session_status() == PHP_SESSION_NONE)
 {
     session_start();
 }
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+require_once('./model/PostManager.php');
+require_once('./model/CommentManager.php');
 
 /**
  * Affiche la liste des articles
@@ -15,7 +15,7 @@ function listPosts()
 	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
 
-	require('view/frontend/listPostsView.php');
+	require('./view/frontend/listPostsView.php');
 }
 
 /**
@@ -33,7 +33,7 @@ function post()
 	$minId = $postManager->firstPost();
 	$nbComments = $commentManager->countComments($_GET['id']);
 
-	require('view/frontend/postView.php');
+	require('./view/frontend/postView.php');
 }
 
 /**
@@ -45,7 +45,7 @@ function previousPost($id)
 	$postManager = new PostManager();
 	$idPrev = $postManager->previous($id);
 
-	header('Location: episode-' . $idPrev);
+	header('Location: index?action=post&id=' . $idPrev);
 }
 
 /**
@@ -57,7 +57,7 @@ function nextPost($id)
 	$postManager = new PostManager();
 	$idNext = $postManager->next($id);
 
-	header('Location: episode-' . $idNext);
+	header('Location: index?action=post&id=' . $idNext);
 }
 
 /**
@@ -68,7 +68,7 @@ function lastEpisode()
 	$postManager = new PostManager();
 	$lastPostId = $postManager->lastPost();
 
-	header('Location: episode-' . $lastPostId);
+	header('Location: index?action=post&id=' . $lastPostId);
 }
 
 /**
@@ -89,7 +89,7 @@ function addComment($postId, $author, $comment)
 	}
 	else
 	{
-		header('Location: episode-' . $postId);
+		header('Location: index.php?action=post&id=' . $postId);
 	}
 }
 
@@ -108,7 +108,7 @@ function signal($commentId)
 	}
 	else
 	{
-		header('Location: episode-' . $_GET['post_id']);
+		header('Location: index.php?action=post&id=' . $_GET['post_id']);
 	}
 }
 
@@ -138,7 +138,7 @@ function unsignal($commentId)
 function login()
 {
 	$error = '';
-	require('view/backend/loginView.php');
+	require('./view/backend/loginView.php');
 }
 
 /**
@@ -147,7 +147,7 @@ function login()
 function logingError()
 {
 	$error = "<p style='color: red'>Identifiant ou mot de passe incorrect</p>";
-	require('view/backend/loginView.php');
+	require('./view/backend/loginView.php');
 }
 
 /**
@@ -198,7 +198,7 @@ function onePostAdmin($id)
 	$comments = $commentManager->getComments($_GET['id']);
 	$nbComments = $commentManager->countComments($_GET['id']);
 
-	require('view/backend/onePostAdminView.php');
+	require('./view/backend/onePostAdminView.php');
 }
 
 /**
