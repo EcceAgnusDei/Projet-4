@@ -53,9 +53,9 @@
 	<div class="comments">
 		<div class="comment-body">
 			<p>
-				<strong><?= htmlspecialchars($data['author']) ?></strong><em> le <?= $data['comment_date_fr'] ?></em> :
+				<strong><?= $data['author'] ?></strong><em> le <?= $data['comment_date_fr'] ?></em> :
 			</p>
-			<p> <?= nl2br(htmlspecialchars($data['comment'])) ?>
+			<p> <?= nl2br($data['comment']) ?>
 			</p>
 		</div>
 		<div class="comment-info">

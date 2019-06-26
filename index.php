@@ -35,7 +35,7 @@ try
 				{
 					if (!empty($_POST['author']) && !empty($_POST['comment'])) 
 					{
-						addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+						addComment($_GET['id'], htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']));
 					}
 					else 
 					{

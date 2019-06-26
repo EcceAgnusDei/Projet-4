@@ -2,6 +2,9 @@
 <?php ob_start(); ?>
 <section id="admin-posts" class="grid">
 	<h2>Vos articles</h2>
+	<p>
+		<a  href="admin.php?action=newpost">Ajouter un article</a>
+	</p>
 	<table class="table">
 	<?php
 	while($data = $posts->fetch())
