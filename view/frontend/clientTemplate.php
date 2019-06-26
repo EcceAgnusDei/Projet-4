@@ -22,8 +22,8 @@
     		</div>
     		<nav class="menu grid">
     			<ul>
-    				<li><a class="menu-item" href="index.php">Accueil</a></li>
-                    <li><a class="menu-item" href="index.php?action=listPosts">Les épisodes</a></li>
+    				<li><a class="menu-item" href="accueil">Accueil</a></li>
+                    <li><a class="menu-item" href="table-des-matieres">Les épisodes</a></li>
                     <li><a class="menu-item" href="index.php?action=lastEpisode">Le dernier épisode</a></li>
     			</ul>
     		</nav>
@@ -35,10 +35,9 @@
                     <div></div>
                 </div>
                 <ul class="menu-mobile">
-                    <li><a class="menu-item" href="index.php">Accueil</a></li>
-                    <li><a class="menu-item" href="index.php?action=listPosts">Les épisodes</a></li>
+                    <li><a class="menu-item" href="accueil">Accueil</a></li>
+                    <li><a class="menu-item" href="table-des-matieres">Les épisodes</a></li>
                     <li><a class="menu-item" href="index.php?action=lastEpisode">Dernier épisode</a></li>
-                    <li><a class="menu-item" href="index.php?action=login">Admin</a></li>
                 </ul>
             </div>
     	</header>

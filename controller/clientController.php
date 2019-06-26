@@ -45,7 +45,7 @@ function previousPost($id)
 	$postManager = new PostManager();
 	$idPrev = $postManager->previous($id);
 
-	header('Location: index?action=post&id=' . $idPrev);
+	header('Location: episode-' . $idPrev);
 }
 
 /**
@@ -57,7 +57,7 @@ function nextPost($id)
 	$postManager = new PostManager();
 	$idNext = $postManager->next($id);
 
-	header('Location: index?action=post&id=' . $idNext);
+	header('Location: episode-' . $idNext);
 }
 
 /**
@@ -68,7 +68,7 @@ function lastEpisode()
 	$postManager = new PostManager();
 	$lastPostId = $postManager->lastPost();
 
-	header('Location: index?action=post&id=' . $lastPostId);
+	header('Location: episode-' . $lastPostId);
 }
 
 /**
@@ -89,7 +89,7 @@ function addComment($postId, $author, $comment)
 	}
 	else
 	{
-		header('Location: index.php?action=post&id=' . $postId);
+		header('Location: episode-' . $postId);
 	}
 }
 
@@ -108,7 +108,7 @@ function signal($commentId)
 	}
 	else
 	{
-		header('Location: index.php?action=post&id=' . $_GET['post_id']);
+		header('Location: episode-' . $_GET['post_id']);
 	}
 }
 
