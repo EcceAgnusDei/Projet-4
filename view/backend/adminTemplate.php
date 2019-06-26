@@ -26,7 +26,6 @@
 				<li><a href="admin.php?action=commentadminbyid" class="menu-item">Commentaires</a></li>
 				<li><a href="admin.php?action=newpost" class="menu-item">Nouvel article</a></li>
 				<li><a href="index.php" class="menu-item">Accueil</a></li>
-				<li><a href="admin.php?action=logout" class="menu-item">Déconnexion</a></li>
 			</ul>
 		</nav>
 		<div class="menu-burger">
@@ -41,13 +40,12 @@
 				<li><a href="admin.php?action=commentadminbyid" class="menu-item">Commentaires</a></li>
 				<li><a href="admin.php?action=newpost" class="menu-item">Nouvel article</a></li>
 				<li><a href="index.php" class="menu-item">Accueil</a></li>
-				<li><a href="admin.php?action=logout" class="menu-item">Déconnexion</a></li>
 			</ul>
 		</div>
 	</header>
 	<?= $contentAdmin ?>
 	<footer class="client-footer">
-		<p class="footer-content">&copy; Jean Forteroche . <a href="view/frontend/rgpd.html">RGPD</a> . <a href="view/frontend/legalNotice.html">Mentions légales</a> . <a href="index.php?action=login">Admin</a></p>
+		<p class="footer-content">&copy; Jean Forteroche . <a href="view/frontend/rgpd.html">RGPD</a> . <a href="view/frontend/legalNotice.html">Mentions légales</a> . <a href="admin.php?action=logout">Déconnexion</a></p>
 	</footer>
 </body>
 </html>
