@@ -12,7 +12,7 @@
 	<link rel="shortcut icon" type="image/png" href="././Public/css/img/favicon.png">
 </head>
 <body>
-	<section class="grid error-section">
+	<section class="grid error-section last-section">
 		<img class="error-img" src="public/css/img/error.png" alt="Erreur">
 		<h2>Oups, une erreur est survenue... la voici :</h2>
 

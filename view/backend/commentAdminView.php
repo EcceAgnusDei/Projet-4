@@ -1,7 +1,7 @@
 <?php $head = '	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 '; ?>
 <?php ob_start(); ?>
-<section class="grid">
+<section class="grid last-section">
 	<h2>La liste des commentaires</h2>
 	<nav class="comment-sort">
 		<ul>
@@ -38,7 +38,7 @@
 	}
 	$comments->closeCursor();
 	?>
-	<?php $contentAdmin = ob_get_clean(); ?>
 </section>
+<?php $contentAdmin = ob_get_clean(); ?>
 
 <?php require('view/backend/adminTemplate.php'); ?>

@@ -27,7 +27,7 @@
 	</nav>
 </section>
 
-<section class="grid">
+<section class="grid last-section">
 	<h2>Commentaires (<?= $nbComments ?>)</h2>
 	<div class="comment-form">
 		<p>Ajouter un commentaire</p>

@@ -1,7 +1,7 @@
 <?php $title = 'Authentification' ?>
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section class="grid">
+<section class="grid last-section">
 	<h1>Administration</h1>
 	<form action="./index.php?action=identifying" method="post" class="login-form">
 		<label for="login">Identifiant</label>

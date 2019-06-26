@@ -24,8 +24,7 @@
     			<ul>
     				<li><a class="menu-item" href="index.php">Accueil</a></li>
                     <li><a class="menu-item" href="index.php?action=listPosts">Les épisodes</a></li>
-                    <li><a class="menu-item" href="index.php?action=lastEpisode">Dernier épisode</a></li>
-    				<li><a class="menu-item" href="index.php?action=login">Admin</a></li>
+                    <li><a class="menu-item" href="index.php?action=lastEpisode">Le dernier épisode</a></li>
     			</ul>
     		</nav>
             <div class="menu-burger">
@@ -45,7 +44,7 @@
     	</header>
         <?= $content ?>
         <footer class="client-footer">
-            <p class="footer-content">&copy; Jean Forteroche . <a href="#">RGPD</a> . <a href="view/frontend/legalNotice.html">Mentions légales</a> . <a href="index.php?action=login">Admin</a></p>
+            <p class="footer-content">&copy; 2019 Jean Forteroche . <a href="view/frontend/rgpd.html">RGPD</a> . <a href="view/frontend/legalNotice.html">Mentions légales</a> . <a href="index.php?action=login">Admin</a></p>
         </footer>
     </body>
 </html>

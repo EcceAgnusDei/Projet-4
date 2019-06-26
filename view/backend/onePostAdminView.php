@@ -24,7 +24,7 @@
 	</nav>
 </section>
 
-<section class="grid">
+<section class="grid last-section">
 	<h2>Commentaires (<?= $nbComments ?>)</h2>
 	<?php
 	while ($data = $comments->fetch())

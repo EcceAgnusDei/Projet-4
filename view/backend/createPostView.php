@@ -22,7 +22,7 @@ else
 {
 ?>
 <?php ob_start(); ?>
-<section class="grid">
+<section class="grid last-section">
 	<h2>Créez votre article</h2>
 	<form action="admin.php?action=createpost" method="POST">
 		<label for="title">Titre</label>

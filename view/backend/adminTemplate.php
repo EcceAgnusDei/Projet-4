@@ -46,6 +46,9 @@
 		</div>
 	</header>
 	<?= $contentAdmin ?>
+	<footer class="client-footer">
+		<p class="footer-content">&copy; Jean Forteroche . <a href="view/frontend/rgpd.html">RGPD</a> . <a href="view/frontend/legalNotice.html">Mentions légales</a> . <a href="index.php?action=login">Admin</a></p>
+	</footer>
 </body>
 </html>
 

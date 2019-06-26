@@ -1,6 +1,6 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section id="admin-posts" class="grid">
+<section id="admin-posts" class="grid last-section">
 	<h2>Vos articles</h2>
 	<p>
 		<a  href="admin.php?action=newpost">Ajouter un article</a>

@@ -2,7 +2,7 @@
 <?php $head = ''; ?>
 <?php ob_start(); ?>
 <h2>Table des matières : </h2>
-<section class="grid">
+<section class="grid last-section">
 <?php
 while ($data = $posts->fetch())
 {

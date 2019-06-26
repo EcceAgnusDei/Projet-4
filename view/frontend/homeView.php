@@ -1,7 +1,7 @@
 <?php $title = 'Billet simple pour l\'Alaska'; ?>
 <?php $head = ''; ?>
 <?php ob_start(); ?>
-<section class="home-body">
+<section class="home-body last-section">
 	<div class="grid">
 		<h2>Bienvenue dans mon nouveau livre !</h2>
 		<div class="home-body-text">
