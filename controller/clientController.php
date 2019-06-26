@@ -3,8 +3,8 @@ if(session_status() == PHP_SESSION_NONE)
 {
     session_start();
 }
-require_once('./model/PostManager.php');
-require_once('./model/CommentManager.php');
+require_once('model/PostManager.php');
+require_once('model/CommentManager.php');
 
 /**
  * Affiche la liste des articles
@@ -15,7 +15,7 @@ function listPosts()
 	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
 
-	require('./view/frontend/listPostsView.php');
+	require('view/frontend/listPostsView.php');
 }
 
 /**
@@ -33,7 +33,7 @@ function post()
 	$minId = $postManager->firstPost();
 	$nbComments = $commentManager->countComments($_GET['id']);
 
-	require('./view/frontend/postView.php');
+	require('view/frontend/postView.php');
 }
 
 /**
@@ -138,7 +138,7 @@ function unsignal($commentId)
 function login()
 {
 	$error = '';
-	require('./view/backend/loginView.php');
+	require('view/backend/loginView.php');
 }
 
 /**
@@ -147,7 +147,7 @@ function login()
 function logingError()
 {
 	$error = "<p style='color: red'>Identifiant ou mot de passe incorrect</p>";
-	require('./view/backend/loginView.php');
+	require('view/backend/loginView.php');
 }
 
 /**
@@ -198,7 +198,7 @@ function onePostAdmin($id)
 	$comments = $commentManager->getComments($_GET['id']);
 	$nbComments = $commentManager->countComments($_GET['id']);
 
-	require('./view/backend/onePostAdminView.php');
+	require('view/backend/onePostAdminView.php');
 }
 
 /**
