@@ -37,12 +37,12 @@
 	<div class="comments" <?php if(isset($_GET['comment_id']) && $_GET['comment_id'] != $data['id']) { echo "style='display: none;'";}?>>
 		<div class="comment-body">
 			<p>
-				<strong><?= htmlspecialchars($data['author']) ?></strong>
+				<strong><?= $data['author'] ?></strong>
 				<em>le <?= $data['comment_date_fr'] ?> :</em>
 			</p>
 
 			<p>
-				<?= nl2br(htmlspecialchars($data['comment'])) ?>
+				<?= nl2br($data['comment']) ?>
 			</p>
 		</div>
 		<div class="comment-info">

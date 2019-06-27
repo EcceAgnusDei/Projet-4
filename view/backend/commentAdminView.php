@@ -16,12 +16,12 @@
 	<div class="comments">
 		<div class="comment-body">
 			<p>
-				<strong><?= htmlspecialchars($data['author']) ?></strong>
+				<strong><?= $data['author'] ?></strong>
 				<em>le <?= $data['comment_date_fr'] ?> :</em>
 			</p>
 
 			<p>
-				<?= nl2br(htmlspecialchars($data['comment'])) ?>
+				<?= nl2br($data['comment']) ?>
 			</p>
 			<p class="show-post"><a href="admin.php?action=onepostadmin&amp;id=<?= $data['post_id']?>&amp;comment_id=<?= $data['id'] ?>">Afficher</a></p>
 		</div>
