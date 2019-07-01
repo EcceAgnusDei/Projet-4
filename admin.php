@@ -4,6 +4,7 @@ if(session_status() == PHP_SESSION_NONE)
     session_start();
 }
 require('controller/clientController.php');
+require('controller/adminController.php');
 
 try
 {

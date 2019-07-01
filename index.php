@@ -1,5 +1,6 @@
 <?php
 require('controller/clientController.php');
+require('controller/adminController.php');
 
 try
 {
